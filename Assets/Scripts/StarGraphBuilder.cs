@@ -336,16 +336,14 @@ public class StarGraphBuilder
                 if (bestUnvisited.HasValue && bestPathToUnvisited != null && bestPathDistance < float.MaxValue)
                 {
                     // Skip the first vertex if it's the current position
-                    int startIndex = bestPathToUnvisited[0] == current ? 1 : 0;
-
-                    for (int i = startIndex; i < bestPathToUnvisited.Count; i++)
+                    for (int i = 1; i < bestPathToUnvisited.Count; i++)
                     {
                         Vector3 step = bestPathToUnvisited[i];
                         if (!visited.Contains(step))
                         {
                             visited.Add(step);
-                            path.Add(step);
                         }
+                        path.Add(step);
                     }
                     current = bestUnvisited.Value;
                 }
@@ -356,7 +354,6 @@ public class StarGraphBuilder
                 }
             }
         }
-
         return path;
     }
 }

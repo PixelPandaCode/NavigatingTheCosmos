@@ -69,7 +69,7 @@ public class StarManager : MonoBehaviour
 
     public void ShowPath(Vector3 start, Vector3 end)
     {
-        List<Vector3> Path = GraphBuilder.FindPathDijkstra(start, end);
+        List<Vector3> Path = GraphBuilder.FindPathAStar(start, end);
         for (int i = 0; i < lineRenderers.Count; ++i)
         {
             Vector3[] positions = new Vector3[2];

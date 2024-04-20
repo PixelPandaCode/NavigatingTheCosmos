@@ -56,3 +56,5 @@ sysinfo.txt
 *.bak2
 *.tmp
 /Released
+/.vsconfig
+/Released.zip
